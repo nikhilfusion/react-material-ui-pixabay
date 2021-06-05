@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Header from './Components/Common/Header';
-import Home from './Components/Home';
+import Header from './Components/common/Header';
+import Home from './Components/home/Home';
 import NotFound from './Components/NotFound'
-import ListItem from './Components/ListItem';
+import AlbumDetails from './Components/details/AlbumDetails';
 
 function Routes() {
   return (
     <Router>
       <Header />
-      <main style={{ marginTop: '80px'}}>
+      <main style={{ marginTop: '80px' }}>
         <Switch>
-          <Redirect exact from="/" to="/xyz" />
-          <Route exact path="/xyz" component={Home} />
-          <Route exact path="/xyz/:id" component={ListItem} />
+          <Redirect exact from="/" to="/albums" />
+          <Route exact path="/albums" component={Home} />
+          <Route exact path="/albums/:id" component={AlbumDetails} />
           <Route component={NotFound} />
         </Switch>
       </main>

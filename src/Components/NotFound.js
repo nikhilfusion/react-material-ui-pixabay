@@ -9,6 +9,7 @@ import {
   useMediaQuery,
   makeStyles
 } from '@material-ui/core';
+import NotFoundImage from '../assets/not_found.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,7 +58,7 @@ function NotFound() {
           <img
             alt="Under development"
             className={classes.image}
-            src="images/not_found.svg"
+            src={NotFoundImage}
           />
         </Box>
         <Box
