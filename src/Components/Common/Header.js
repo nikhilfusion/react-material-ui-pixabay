@@ -1,26 +1,35 @@
 import React from 'react';
-import { CssBaseline, AppBar, Toolbar, Typography, Container } from '@material-ui/core';
-import { PhotoCamera } from '@material-ui/icons'
+import { AppBar, Toolbar, Typography, Button, IconButton, makeStyles } from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 const Header = () => {
+  const classes = useStyles();
   return (
-    <>
-      <CssBaseline>
-        <AppBar position="relative">
-          <Toolbar>
-            <PhotoCamera />
-            <Typography variant="h6">Album</Typography>
-          </Toolbar>
-        </AppBar>
-        <main>
-          <div>
-            <Container maxWidth="sm">
-              <Typography variant="h2" align="center" color="textPrimary"  gutterBottom>ALBUM</Typography>
-            </Container>
-          </div>
-        </main>
-      </CssBaseline>
-    </>
+    <div className={classes.root}>
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            Album App
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
   )
 }
 
