@@ -6,7 +6,7 @@ import {
   Typography,
   CardContent,
 } from '@material-ui/core';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { capitalizeName } from '../../utils/common';
 import Activity from '../common/Activity';
 
@@ -60,20 +60,24 @@ export default function Cards({ cardData, onCardClick }) {
   )
 }
 
-const activityDataShape = {
-  likes: propTypes.number,
-  comments: propTypes.number,
-  downloads: propTypes.number,
-  favorites: propTypes.number
-}
+// const activityDataShape = {
+//   likes: PropTypes.number,
+//   comments: PropTypes.number,
+//   downloads: PropTypes.number,
+//   favorites: PropTypes.number
+// }
 
-const cardsShape = {
-  user: propTypes.string,
-  tags: propTypes.string,
-  activityData: propTypes.objectOf(propTypes.shape(activityDataShape))
-}
+// const cardsShape = {
+//   id: PropTypes.string,
+//   previewURL: PropTypes.string,
+//   user: PropTypes.string,
+//   tags: PropTypes.string,
+//   views: PropTypes.number,
+//   activityData: PropTypes.objectOf(PropTypes.shape(activityDataShape))
+// }
 
 Cards.propTypes = {
-  cardData: propTypes.objectOf(propTypes.shape(cardsShape)),
-  onCardClick: propTypes.func
+  cardData: PropTypes.object,
+  onCardClick: PropTypes.func
+  // cardData: PropTypes.objectOf(PropTypes.shape(cardsShape)),
 }

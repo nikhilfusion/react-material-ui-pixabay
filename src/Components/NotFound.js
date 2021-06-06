@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -9,6 +8,7 @@ import {
   useMediaQuery,
   makeStyles
 } from '@material-ui/core';
+import { useHistory } from 'react-router';
 import NotFoundImage from '../assets/not_found.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
 function NotFound() {
   const classes = useStyles();
   const theme = useTheme();
+  const history = useHistory();
   const mobileDevice = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
@@ -39,6 +40,7 @@ function NotFound() {
           align="center"
           variant={mobileDevice ? 'h4' : 'h1'}
           color="textPrimary"
+          data-testid="title"
         >
           404: The page you are looking for isn’t here
         </Typography>
@@ -68,8 +70,7 @@ function NotFound() {
         >
           <Button
             color="secondary"
-            component={RouterLink}
-            to="/"
+            onClick={() => history.push('/')}
             variant="outlined"
           >
             Back to home

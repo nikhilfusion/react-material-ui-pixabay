@@ -49,7 +49,6 @@ export default function AlbumDetails() {
   }, []);
 
   async function fetchUserAlbum() {
-    console.log("userId is ", userId);
     const api = `https://pixabay.com/api/?key=${API_KEY}&q=yellow+flowers&id=${userId}`
     try {
       const result = await axios.get(api);

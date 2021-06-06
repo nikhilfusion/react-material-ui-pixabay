@@ -11,7 +11,7 @@ import {
   GetApp as DownloadIcon,
   ExposurePlus1 as LikeIcon
 } from '@material-ui/icons';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   activityMain: {
@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
   iconContainer: {
     margin: 'auto',
-    // padding: '8px 0'
   },
   commentsContainer: {
     background: "#0000ff",
@@ -78,13 +77,14 @@ export default function Activity({ activityData }) {
   )
 }
 
-const activityDataShape = {
-  likes: propTypes.number,
-  comments: propTypes.number,
-  downloads: propTypes.number,
-  favorites: propTypes.number
-}
+// const activityDataShape = {
+//   likes: PropTypes.number,
+//   comments: PropTypes.number,
+//   downloads: PropTypes.number,
+//   favorites: PropTypes.number
+// }
 
 Activity.propTypes = {
-  activityData: propTypes.objectOf(propTypes.shape(activityDataShape))
+  activityData: PropTypes.object
+  // activityData: PropTypes.objectOf(PropTypes.shape(activityDataShape))
 }
