@@ -3,17 +3,23 @@
 
 ## Steps to Run the App
 
-Clone the repo by:
-### `yarn start`
+Prerequisite:
 
-git clone git@github.com:nikhilfusion/react-material-ui-pixabay.git
+Install node & npm to the latest version.
+
+Clone the repo by:
+
+### `git clone https://github.com/nikhilfusion/react-material-ui-pixabay`
+
 
 After the succesful clone do:
+
+### `cd react-material-ui-pixabay`
 
 ### `yarn install`
 
 
-Create a .env file and set the API key by 
+Create a .env file in the root folder and set the API key by:
 
 
 ### `REACT_APP_API_KEY=64xxxx-xxxxxxxxxxxxxxxxxxxxafe15`
